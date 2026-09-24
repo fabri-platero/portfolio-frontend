@@ -6,7 +6,7 @@ function Hero() {
         Available for opportunities
       </span>
       <h1 className="mt-6 text-7xl font-extrabold tracking-tight sm:text-8xl">
-        Hi, I'm <span className="text-cyan-500">Fabrizio</span>
+        Hi, I'm <span className="text-cyan-500">Fabrizio Platero</span>
       </h1>
       <p className="mt-6 text-2xl text-neutral-500 dark:text-neutral-400">Frontend Developer</p>
     </section>
