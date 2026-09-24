@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react';
 
 const navItems = [
-  { id: 'hero', label: 'Hero' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'education', label: 'Education' },
+  { id: 'about', label: 'About' },
   { id: 'projects', label: 'Projects' },
-  { id: 'resume', label: 'Resume' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -32,18 +29,33 @@ function NavBar() {
 
     sections.forEach((section) => observer.observe(section));
 
-    return () => observer.disconnect();
+    const handleScroll = () => {
+      const scrolledToBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      if (scrolledToBottom) {
+        setActiveId(navItems[navItems.length - 1].id);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
-    <nav className="fixed bottom-4 left-1/2 z-50 w-[min(90%,_42rem)] -translate-x-1/2 rounded-full bg-white p-4 text-black shadow-lg">
-      <ul className="flex flex-wrap justify-center gap-x-4 gap-y-2">
+    <nav className="fixed bottom-4 left-1/2 z-50 w-[min(90%,_42rem)] -translate-x-1/2 rounded-full border border-black/10 bg-white/40 p-2 text-black shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-white/5 dark:text-white">
+      <ul className="flex flex-wrap justify-center gap-1">
         {navItems.map((item) => (
           <li key={item.id}>
             <a
               href={`#${item.id}`}
-              className={`transition-colors hover:text-cyan-300 ${
-                activeId === item.id ? 'text-cyan-500 font-semibold' : ''
+              className={`block rounded-full px-4 py-2 text-sm transition-colors hover:bg-black/5 dark:hover:bg-white/10 ${
+                activeId === item.id
+                  ? 'font-semibold text-cyan-600 dark:text-cyan-400'
+                  : 'text-black/50 dark:text-white/50'
               }`}
             >
               {item.label}
