@@ -1,5 +1,5 @@
 import { FaDumbbell } from 'react-icons/fa';
-import SectionHeading from './SectionHeading';
+import Section from './Section';
 
 const experiences = [
   {
@@ -17,9 +17,8 @@ const experiences = [
 
 function WorkExperience() {
   return (
-    <section id="experience" className="scroll-mt-10">
-      <SectionHeading number="02" title="Work Experience" />
-      <div className="mt-6 flex flex-col gap-8">
+    <Section id="experience" number="02" title="Work Experience">
+      <div className="flex flex-col gap-8">
         {experiences.map((exp) => {
           const Icon = exp.icon;
           return (
@@ -46,7 +45,7 @@ function WorkExperience() {
           );
         })}
       </div>
-    </section>
+    </Section>
   );
 }
 

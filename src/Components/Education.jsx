@@ -1,5 +1,5 @@
 import { FaGraduationCap } from 'react-icons/fa';
-import SectionHeading from './SectionHeading';
+import Section from './Section';
 
 const education = {
   school: 'Web Development',
@@ -10,9 +10,8 @@ const education = {
 
 function Education() {
   return (
-    <section id="education" className="scroll-mt-10">
-      <SectionHeading number="04" title="Education" />
-      <div className="mt-6 flex gap-4">
+    <Section id="education" number="04" title="Education">
+      <div className="flex gap-4">
         <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
           <FaGraduationCap className="h-6 w-6" />
         </div>
@@ -31,7 +30,7 @@ function Education() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
 

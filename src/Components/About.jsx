@@ -1,10 +1,9 @@
-import SectionHeading from './SectionHeading';
+import Section from './Section';
 
 function About() {
   return (
-    <section id="about" className="scroll-mt-10">
-      <SectionHeading number="01" title="About" />
-      <p className="mt-4 text-lg leading-relaxed text-neutral-600 dark:text-neutral-300">
+    <Section id="about" number="01" title="About">
+      <p className="max-w-3xl text-xl leading-relaxed text-neutral-600 dark:text-neutral-300">
         I'm a Frontend Developer based in San Juan, Argentina, focused on building responsive,
         accessible web applications
         with <span className="font-medium">React</span> and{' '}
@@ -13,7 +12,7 @@ function About() {
         platform. Currently studying Web Development, always looking for new things to build
         and learn.
       </p>
-    </section>
+    </Section>
   );
 }
 

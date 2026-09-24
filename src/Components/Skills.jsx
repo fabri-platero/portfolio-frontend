@@ -14,7 +14,7 @@ import {
   SiTypescript,
 } from 'react-icons/si';
 import { TbTemplate } from 'react-icons/tb';
-import SectionHeading from './SectionHeading';
+import Section from './Section';
 
 const skillGroups = [
   {
@@ -55,12 +55,11 @@ const skillGroups = [
 
 function Skills() {
   return (
-    <section id="skills" className="scroll-mt-10">
-      <SectionHeading number="03" title="Skills" />
-      <div className="mt-6 flex flex-col gap-6">
+    <Section id="skills" number="03" title="Skills">
+      <div className="flex flex-col gap-8">
         {skillGroups.map((group) => (
           <div key={group.label}>
-            <h3 className="text-base font-medium text-neutral-500 dark:text-neutral-400">
+            <h3 className="text-lg font-medium text-neutral-500 dark:text-neutral-400">
               {group.label}
             </h3>
             <div className="mt-3 flex flex-wrap gap-3">
@@ -78,7 +77,7 @@ function Skills() {
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }
 

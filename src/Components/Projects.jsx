@@ -1,4 +1,4 @@
-import SectionHeading from './SectionHeading';
+import Section from './Section';
 
 // TODO: reemplazá estos datos de ejemplo por tus proyectos reales
 const projects = [
@@ -34,9 +34,8 @@ const projects = [
 
 function Projects() {
   return (
-    <section id="projects" className="scroll-mt-10">
-      <SectionHeading number="05" title="Projects" />
-      <div className="mt-6 grid gap-6 sm:grid-cols-2">
+    <Section id="projects" number="05" title="Projects">
+      <div className="grid gap-6 sm:grid-cols-2">
         {projects.map((project) => {
           const isPlanned = Boolean(project.status);
           const Wrapper = isPlanned ? 'div' : 'a';
@@ -72,7 +71,7 @@ function Projects() {
           );
         })}
       </div>
-    </section>
+    </Section>
   );
 }
 
