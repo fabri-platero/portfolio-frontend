@@ -19,7 +19,7 @@ function ThemeToggle({ className = '' }) {
       type="button"
       onClick={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}
       aria-label="Toggle theme"
-      className={`flex h-9 w-9 items-center justify-center rounded-full text-lg transition-colors hover:bg-neutral-200 dark:hover:bg-neutral-800 ${className}`}
+      className={`flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-black/10 bg-white/40 text-lg shadow-sm backdrop-blur-md transition-colors hover:bg-neutral-200 dark:border-white/10 dark:bg-white/5 dark:hover:bg-neutral-800 ${className}`}
     >
       {theme === 'dark' ? '☀️' : '🌙'}
     </button>
