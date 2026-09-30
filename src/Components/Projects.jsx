@@ -1,16 +1,15 @@
 import Section from './Section';
 
-// TODO: reemplazá estos datos de ejemplo por tus proyectos reales
 const projects = [
   {
     title: 'StudioDNA',
+    status: 'Private',
     description:
       'Web dashboard for gyms, part of MyAthleteDNA. Lets gym owners and staff track member ' +
       'activity and studio performance through AI-driven modules like churn alerts, effort ' +
       'trajectory, class energy index, and member upsell suggestions, all from a single ' +
       'overview.',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    link: '#',
   },
   {
     title: 'Game Backlog Tracker',
@@ -20,15 +19,14 @@ const projects = [
       'PlayStation to sync your library, rate and comment on games, and fill out a taste ' +
       'profile that gets sent to an LLM for personalized game recommendations.',
     tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS'],
-    link: '#',
   },
   {
     title: 'SoundWave',
+    status: 'Private',
     description:
       'A music sharing web app where users upload tracks, albums, and playlists, and can ' +
       'like and repost music from other users.',
     tags: ['Laravel', 'PHP', 'Blade', 'SQLite'],
-    link: '#',
   },
 ];
 
@@ -37,18 +35,18 @@ function Projects() {
     <Section id="projects" number="05" title="Projects">
       <div className="grid gap-6 sm:grid-cols-2">
         {projects.map((project) => {
-          const isPlanned = Boolean(project.status);
-          const Wrapper = isPlanned ? 'div' : 'a';
+          const hasStatus = Boolean(project.status);
+          const Wrapper = hasStatus ? 'div' : 'a';
 
           return (
             <Wrapper
               key={project.title}
-              {...(!isPlanned && { href: project.link })}
+              {...(!hasStatus && { href: project.link })}
               className="flex flex-col gap-3 rounded-2xl border border-neutral-200 p-6 transition-colors hover:border-cyan-400 dark:border-neutral-700 dark:hover:border-cyan-500"
             >
               <div className="flex items-center justify-between gap-2">
                 <h3 className="text-lg font-medium">{project.title}</h3>
-                {isPlanned && (
+                {hasStatus && (
                   <span className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
                     {project.status}
                   </span>
