@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 
+reporte_fabri-platero.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
