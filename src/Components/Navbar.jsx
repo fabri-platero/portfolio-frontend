@@ -67,6 +67,7 @@ function NavBar() {
           <li key={item.id}>
             <a
               href={`#${item.id}`}
+              aria-current={activeId === item.id ? 'true' : undefined}
               className={`block rounded-full px-3 py-2 text-sm transition-colors hover:bg-black/5 dark:hover:bg-white/10 ${
                 activeId === item.id
                   ? 'font-semibold text-cyan-600 dark:text-cyan-400'
