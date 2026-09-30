@@ -10,19 +10,3 @@ html {
 body {
   @apply bg-neutral-100 text-neutral-900 transition-colors duration-300 dark:bg-neutral-950 dark:text-neutral-100;
 }
-
-.navbar {
-  position: fixed;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(90%, 420px);
-  z-index: 1000;
-}
-
-.navbar ul {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  list-style: none;
-}
